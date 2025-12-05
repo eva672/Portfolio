@@ -4,9 +4,6 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-snap-type: y mandatory;
-  overflow-y: scroll;
-  height: 100%;
 }
 
 body {
@@ -15,7 +12,6 @@ body {
 }
 
 section {
-  scroll-snap-align: start;
   min-height: 100vh;
   width: 100%;
   position: relative;
@@ -24,6 +20,7 @@ section {
 @layer base {
   :root {
     --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
   }
 
   html {
@@ -32,18 +29,18 @@ section {
   }
 
   body {
-    @apply bg-white text-pink-800 antialiased;
+    @apply bg-white text-gray-900 antialiased;
     font-family: var(--font-sans);
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-bold text-pink-600;
-    font-family: var(--font-sans);
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    @apply font-bold text-black;
+    font-family: var(--font-serif);
+    text-shadow: 0 0 transparent;
   }
 
   h1 {
-    @apply text-4xl md:text-5xl lg:text-6xl;
+    @apply text-5xl md:text-6xl lg:text-7xl;
   }
 
   h2 {
@@ -56,6 +53,11 @@ section {
 
   p {
     @apply text-gray-700 leading-relaxed;
+  }
+
+  /* framed portrait */
+  .portrait-frame {
+    box-shadow: 0 6px 0 rgba(0,0,0,0.06);
   }
 
   a {

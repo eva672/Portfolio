@@ -25,7 +25,7 @@ export default function Projects() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-white px-8 py-20">
       <div className="max-w-6xl mx-auto w-full">
-        <h2 className="text-4xl font-bold text-pink-600 mb-12 text-center">My Projects</h2>
+        <h2 className="text-4xl font-bold text-black mb-12 text-center">My Projects</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <div 
@@ -34,13 +34,13 @@ export default function Projects() {
             >
               <div className="p-6">
                 <div className="text-5xl mb-4 text-center">{project.image}</div>
-                <h3 className="text-xl font-bold text-pink-700 mb-2">{project.title}</h3>
-                <p className="text-pink-800 mb-4">{project.description}</p>
+                <h3 className="text-xl font-bold text-black mb-2">{project.title}</h3>
+                <p className="text-gray-800 mb-4">{project.description}</p>
                 <div className="flex flex-wrap gap-2 mt-4">
                   {project.technologies.map((tech, i) => (
                     <span 
                       key={i}
-                      className="px-3 py-1 bg-pink-100 text-pink-700 rounded-full text-xs font-medium"
+                      className="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs font-medium"
                     >
                       {tech}
                     </span>
@@ -53,7 +53,7 @@ export default function Projects() {
         <div className="text-center mt-12">
           <a 
             href="/projects"
-            className="inline-block bg-pink-600 text-white px-6 py-3 rounded-lg hover:bg-pink-700 transition-colors"
+            className="inline-block bg-yellow-400 text-black px-6 py-3 rounded-lg hover:bg-yellow-500 transition-colors"
           >
             View All Projects
           </a>

@@ -1,36 +1,38 @@
-import Link from 'next/link';
+import { playfair } from '../utils/fonts';
 
 export default function Hero() {
   return (
-    <section className="py-16 md:py-24">
-      <div className="container mx-auto px-6">
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-5xl font-bold mb-6">Hi, I'm Eva Manuska</h1>
-          <h2 className="text-2xl text-gray-600 mb-8">Systems Engineer & Developer</h2>
-          <p className="text-lg text-gray-700 mb-8 leading-relaxed">
-            I build secure, observable infrastructure and developer tools. 
-            I specialize in Rust, JavaScript, Kubernetes, and security tooling like 
-            Suricata and Wazuh.
-          </p>
-          <div className="flex space-x-4">
-            <a 
-              href="#contact" 
-              className="px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors"
-            >
-              Get In Touch
-            </a>
-            <a 
-              href="#projects" 
-              className="px-6 py-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
-            >
-              View My Work
-            </a>
+    <section className="w-full py-20">
+      <div className="max-w-6xl mx-auto px-8 flex items-center gap-12">
+        {/* Left framed photo with yellow accent */}
+        <div className="relative flex-shrink-0">
+          <div className="absolute -left-6 -top-6 w-40 h-40 bg-yellow-300 transform rotate-0"></div>
+          <div className="border-4 border-black p-3 bg-white relative z-10">
+            {/* If portrait.jpg is missing, fallback to a colored box */}
+            <div className="w-64 h-64 bg-gray-200 flex items-center justify-center overflow-hidden">
+              {/* Render img unconditionally so SSR and client markup match (avoids hydration mismatch) */}
+              <img src="/portrait.jpg" alt="portrait" className="w-full h-full object-cover" />
+            </div>
           </div>
         </div>
-        
-        <div className="mt-12 flex items-center space-x-6">
-          <div className="h-1 w-16 bg-primary rounded-full"></div>
-          <span className="text-text-secondary">Scroll to explore</span>
+
+        {/* Right copy */}
+        <div className="flex-1">
+          <h1 className={`${playfair.variable} font-serif text-6xl leading-tight text-black mb-6`}>
+            WEBSITE
+            <br />
+            DEVELOPER
+          </h1>
+
+          <div className="w-28 h-1 bg-black mb-6"></div>
+
+          <p className="text-gray-700 max-w-lg mb-8">
+            Founder of Frenify. Professional UI/UX designer and web developer based on London. Sometimes works as a freelancer.
+          </p>
+
+          <div className="mt-8">
+            <p className="text-2xl font-medium italic">Felicia Aman</p>
+          </div>
         </div>
       </div>
     </section>

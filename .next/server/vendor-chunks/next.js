@@ -31,6 +31,16 @@ eval("// Exports\nmodule.exports = {\n\t\"style\": {\"fontFamily\":\"'__Inter_f3
 
 /***/ }),
 
+/***/ "./node_modules/next/font/google/target.css?{\"path\":\"utils/fonts.js\",\"import\":\"Playfair_Display\",\"arguments\":[{\"subsets\":[\"latin\"],\"weight\":[\"400\",\"700\",\"900\"],\"display\":\"swap\",\"variable\":\"--font-playfair\"}],\"variableName\":\"playfair\"}":
+/*!*************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/next/font/google/target.css?{"path":"utils/fonts.js","import":"Playfair_Display","arguments":[{"subsets":["latin"],"weight":["400","700","900"],"display":"swap","variable":"--font-playfair"}],"variableName":"playfair"} ***!
+  \*************************************************************************************************************************************************************************************************************************************************/
+/***/ ((module) => {
+
+eval("// Exports\nmodule.exports = {\n\t\"style\": {\"fontFamily\":\"'__Playfair_Display_5d3d4e', '__Playfair_Display_Fallback_5d3d4e'\",\"fontStyle\":\"normal\"},\n\t\"className\": \"__className_5d3d4e\",\n\t\"variable\": \"__variable_5d3d4e\"\n};\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9ub2RlX21vZHVsZXMvbmV4dC9mb250L2dvb2dsZS90YXJnZXQuY3NzP3tcInBhdGhcIjpcInV0aWxzL2ZvbnRzLmpzXCIsXCJpbXBvcnRcIjpcIlBsYXlmYWlyX0Rpc3BsYXlcIixcImFyZ3VtZW50c1wiOlt7XCJzdWJzZXRzXCI6W1wibGF0aW5cIl0sXCJ3ZWlnaHRcIjpbXCI0MDBcIixcIjcwMFwiLFwiOTAwXCJdLFwiZGlzcGxheVwiOlwic3dhcFwiLFwidmFyaWFibGVcIjpcIi0tZm9udC1wbGF5ZmFpclwifV0sXCJ2YXJpYWJsZU5hbWVcIjpcInBsYXlmYWlyXCJ9IiwibWFwcGluZ3MiOiJBQUFBO0FBQ0E7QUFDQSxXQUFXLHNHQUFzRztBQUNqSDtBQUNBO0FBQ0EiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9ldmEtbWFudXNrYS1wb3J0Zm9saW8vLi9ub2RlX21vZHVsZXMvbmV4dC9mb250L2dvb2dsZS90YXJnZXQuY3NzPzA4ZmEiXSwic291cmNlc0NvbnRlbnQiOlsiLy8gRXhwb3J0c1xubW9kdWxlLmV4cG9ydHMgPSB7XG5cdFwic3R5bGVcIjoge1wiZm9udEZhbWlseVwiOlwiJ19fUGxheWZhaXJfRGlzcGxheV81ZDNkNGUnLCAnX19QbGF5ZmFpcl9EaXNwbGF5X0ZhbGxiYWNrXzVkM2Q0ZSdcIixcImZvbnRTdHlsZVwiOlwibm9ybWFsXCJ9LFxuXHRcImNsYXNzTmFtZVwiOiBcIl9fY2xhc3NOYW1lXzVkM2Q0ZVwiLFxuXHRcInZhcmlhYmxlXCI6IFwiX192YXJpYWJsZV81ZDNkNGVcIlxufTtcbiJdLCJuYW1lcyI6W10sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./node_modules/next/font/google/target.css?{\"path\":\"utils/fonts.js\",\"import\":\"Playfair_Display\",\"arguments\":[{\"subsets\":[\"latin\"],\"weight\":[\"400\",\"700\",\"900\"],\"display\":\"swap\",\"variable\":\"--font-playfair\"}],\"variableName\":\"playfair\"}\n");
+
+/***/ }),
+
 /***/ "./node_modules/next/dist/client/add-base-path.js":
 /*!********************************************************!*\
   !*** ./node_modules/next/dist/client/add-base-path.js ***!
