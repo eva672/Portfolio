@@ -8,28 +8,25 @@ import Projects from '../components/Projects';
 import Contact from '../components/Contact';
 
 export default function Home() {
-  const sections = useRef([]);
+  const mainRef = useRef(null);
 
   // Handle scroll and touch events
   useEffect(() => {
-    // Handle mouse wheel for desktop
+    let isScrolling = false;
+    let scrollTimeout;
+    
     const handleWheel = (e) => {
+      if (isScrolling) {
+        e.preventDefault();
+        return;
+      }
+
       if (e.deltaY > 0) {
         // Scrolling down
-        const currentSection = document.elementFromPoint(window.innerWidth / 2, window.innerHeight / 2);
-        const nextSection = currentSection?.nextElementSibling;
-        if (nextSection?.tagName === 'SECTION') {
-          e.preventDefault();
-          nextSection.scrollIntoView({ behavior: 'smooth' });
-        }
+        scrollToSection('next');
       } else {
         // Scrolling up
-        const currentSection = document.elementFromPoint(window.innerWidth / 2, window.innerHeight / 2);
-        const prevSection = currentSection?.previousElementSibling;
-        if (prevSection?.tagName === 'SECTION') {
-          e.preventDefault();
-          prevSection.scrollIntoView({ behavior: 'smooth' });
-        }
+        scrollToSection('prev');
       }
     };
 
@@ -41,42 +38,68 @@ export default function Home() {
     };
 
     const handleTouchMove = (e) => {
-      if (!touchStartY) return;
+      if (isScrolling || !touchStartY) return;
       
       const touchY = e.touches[0].clientY;
       const diff = touchStartY - touchY;
       
       if (Math.abs(diff) > 50) { // Threshold to prevent accidental scrolls
-        const currentSection = document.elementFromPoint(window.innerWidth / 2, window.innerHeight / 2);
-        
         if (diff > 0) {
           // Swiping up
-          const nextSection = currentSection?.nextElementSibling;
-          if (nextSection?.tagName === 'SECTION') {
-            nextSection.scrollIntoView({ behavior: 'smooth' });
-            touchStartY = 0; // Reset to prevent multiple triggers
-          }
+          scrollToSection('next');
         } else {
           // Swiping down
-          const prevSection = currentSection?.previousElementSibling;
-          if (prevSection?.tagName === 'SECTION') {
-            prevSection.scrollIntoView({ behavior: 'smooth' });
-            touchStartY = 0; // Reset to prevent multiple triggers
-          }
+          scrollToSection('prev');
         }
+        touchStartY = 0; // Reset to prevent multiple triggers
+      }
+    };
+
+    const scrollToSection = (direction) => {
+      if (isScrolling) return;
+      
+      const currentSection = document.elementFromPoint(
+        window.innerWidth / 2, 
+        window.innerHeight / 2
+      );
+      
+      if (!currentSection) return;
+      
+      const targetSection = direction === 'next' 
+        ? currentSection.nextElementSibling
+        : currentSection.previousElementSibling;
+      
+      if (targetSection?.tagName === 'SECTION') {
+        isScrolling = true;
+        targetSection.scrollIntoView({ 
+          behavior: 'smooth',
+          block: 'start'
+        });
+        
+        // Prevent multiple scrolls until current one is complete
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+          isScrolling = false;
+        }, 1000);
       }
     };
 
     // Add event listeners
-    window.addEventListener('wheel', handleWheel, { passive: false });
-    window.addEventListener('touchstart', handleTouchStart, { passive: true });
-    window.addEventListener('touchmove', handleTouchMove, { passive: false });
+    const mainElement = mainRef.current;
+    if (mainElement) {
+      mainElement.addEventListener('wheel', handleWheel, { passive: false });
+      mainElement.addEventListener('touchstart', handleTouchStart, { passive: true });
+      mainElement.addEventListener('touchmove', handleTouchMove, { passive: false });
+    }
 
     // Cleanup
     return () => {
-      window.removeEventListener('wheel', handleWheel);
-      window.removeEventListener('touchstart', handleTouchStart);
-      window.removeEventListener('touchmove', handleTouchMove);
+      if (mainElement) {
+        mainElement.removeEventListener('wheel', handleWheel);
+        mainElement.removeEventListener('touchstart', handleTouchStart);
+        mainElement.removeEventListener('touchmove', handleTouchMove);
+      }
+      clearTimeout(scrollTimeout);
     };
   }, []);
 
@@ -90,20 +113,23 @@ export default function Home() {
       
       <Navbar />
 
-      <main className="h-screen overflow-y-auto snap-y snap-mandatory pt-16">
-        <section id="home" className="snap-start">
+      <main 
+        ref={mainRef}
+        className="h-screen overflow-y-auto snap-y snap-mandatory pt-16"
+      >
+        <section id="home" className="snap-start min-h-screen flex items-center">
           <Hero />
         </section>
         
-        <section id="about" className="snap-start">
+        <section id="about" className="snap-start min-h-screen flex items-center bg-gray-50">
           <About />
         </section>
         
-        <section id="projects" className="snap-start">
+        <section id="projects" className="snap-start min-h-screen flex items-center">
           <Projects />
         </section>
         
-        <section id="contact" className="snap-start">
+        <section id="contact" className="snap-start min-h-screen flex items-center bg-gray-50">
           <Contact />
         </section>
       </main>
