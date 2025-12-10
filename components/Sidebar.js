@@ -42,7 +42,7 @@ export default function Sidebar() {
                 <Link
                   href={item.href}
                   onClick={(e) => handleNavClick(e, item.href)}
-                  className={`block py-2 px-4 text-sm font-semibold ${idx === 0 ? 'bg-yellow-300 text-black' : 'text-gray-800 hover:text-black'}`}
+                  className={`block py-2 px-4 text-sm font-semibold ${idx === 0 ? 'bg-purple-400 text-black' : 'text-gray-800 hover:text-black'}`}
                 >
                   {item.name}
                 </Link>

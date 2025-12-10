@@ -17,23 +17,23 @@ export default function About() {
               methodologies to stay at the forefront of web development.
             </p>
             <div className="flex flex-wrap gap-4 mt-8">
-              <span className="px-4 py-2 bg-yellow-100 text-yellow-800 rounded-full text-sm font-medium">
+              <span className="px-4 py-2 bg-purple-100 text-purple-800 rounded-full text-sm font-medium">
                 JavaScript/TypeScript
               </span>
-              <span className="px-4 py-2 bg-yellow-100 text-yellow-800 rounded-full text-sm font-medium">
+              <span className="px-4 py-2 bg-purple-100 text-purple-800 rounded-full text-sm font-medium">
                 React/Next.js
               </span>
-              <span className="px-4 py-2 bg-yellow-100 text-yellow-800 rounded-full text-sm font-medium">
+              <span className="px-4 py-2 bg-purple-100 text-purple-800 rounded-full text-sm font-medium">
                 Node.js
               </span>
-              <span className="px-4 py-2 bg-yellow-100 text-yellow-800 rounded-full text-sm font-medium">
+              <span className="px-4 py-2 bg-purple-100 text-purple-800 rounded-full text-sm font-medium">
                 Tailwind CSS
               </span>
             </div>
           </div>
           <div className="flex items-center justify-center">
-            <div className="w-48 h-48 rounded-full bg-yellow-100 flex items-center justify-center">
-              <span className="text-4xl text-yellow-800">👩‍💻</span>
+            <div className="w-48 h-48 rounded-full bg-purple-100 flex items-center justify-center">
+              <span className="text-4xl text-purple-800">👩‍💻</span>
             </div>
           </div>
         </div>

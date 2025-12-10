@@ -15,10 +15,12 @@ export default function Contact() {
               <input
                 type="text"
                 id="name"
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-400 focus:border-purple-400"
                 placeholder="Your name"
               />
             </div>
+            
+            <div className="border-b border-black my-4"></div>
             
             <div>
               <label htmlFor="email" className="block text-sm font-medium text-gray-800 mb-1">
@@ -27,10 +29,12 @@ export default function Contact() {
               <input
                 type="email"
                 id="email"
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-400 focus:border-purple-400"
                 placeholder="your.email@example.com"
               />
             </div>
+            
+            <div className="border-b border-black my-4"></div>
             
             <div>
               <label htmlFor="message" className="block text-sm font-medium text-gray-800 mb-1">
@@ -39,7 +43,7 @@ export default function Contact() {
               <textarea
                 id="message"
                 rows={5}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-400 focus:border-purple-400"
                 placeholder="Your message..."
               ></textarea>
             </div>
@@ -47,7 +51,7 @@ export default function Contact() {
             <div className="pt-2">
               <button
                 type="submit"
-                className="w-full bg-yellow-400 text-black py-3 px-6 rounded-lg hover:bg-yellow-500 transition-colors font-medium"
+                className="w-full bg-purple-400 text-black py-3 px-6 rounded-lg hover:bg-purple-500 transition-colors font-medium"
               >
                 Send Message
               </button>

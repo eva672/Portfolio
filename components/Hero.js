@@ -6,12 +6,15 @@ export default function Hero() {
       <div className="max-w-6xl mx-auto px-8 flex items-center gap-12">
         {/* Left framed photo with yellow accent */}
         <div className="relative flex-shrink-0">
-          <div className="absolute -left-6 -top-6 w-40 h-40 bg-yellow-300 transform rotate-0"></div>
-          <div className="border-4 border-black p-3 bg-white relative z-10">
-            {/* If portrait.jpg is missing, fallback to a colored box */}
-            <div className="w-64 h-64 bg-gray-200 flex items-center justify-center overflow-hidden">
-              {/* Render img unconditionally so SSR and client markup match (avoids hydration mismatch) */}
-              <img src="/portrait.jpg" alt="portrait" className="w-full h-full object-cover" />
+          <div className="absolute -left-6 -top-6 w-40 h-40 bg-purple-400 transform rotate-0"></div>
+          <div className="border-4 border-black p-0 bg-white relative z-10 w-64 h-64">
+            <div className="w-full h-full overflow-hidden">
+              <img 
+                src="/profile.jpg" 
+                alt="Eva Manuska" 
+                className="w-full h-full object-cover object-center"
+                style={{ objectPosition: 'center 25%' }}
+              />
             </div>
           </div>
         </div>
@@ -31,7 +34,7 @@ export default function Hero() {
           </p>
 
           <div className="mt-8">
-            <p className="text-2xl font-medium italic">Felicia Aman</p>
+            <p className="text-2xl font-medium italic">Eva Manuska</p>
           </div>
         </div>
       </div>
