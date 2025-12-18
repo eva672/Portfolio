@@ -1,40 +1,62 @@
 'use client';
 
 export default function About() {
+  const skills = [
+    'JavaScript/TypeScript', 'React/Next.js', 'Node.js', 'Python',
+    'Tailwind CSS', 'UI/UX Design', 'Responsive Development', 'Git'
+  ];
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-white px-8 py-20">
-      <div className="max-w-4xl mx-auto">
-        <h2 className="text-4xl font-bold text-black mb-8">About Me</h2>
-        <div className="grid md:grid-cols-3 gap-8">
-          <div className="md:col-span-2">
-            <p className="text-gray-800 leading-relaxed mb-6">
-              I'm a passionate developer with expertise in building secure, scalable systems and developer tools. 
-              My focus is on creating robust infrastructure and efficient solutions using modern technologies.
+    <div className="min-h-screen flex items-center justify-center bg-gray-50 px-8 py-20">
+      <div className="max-w-5xl mx-auto w-full">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">About Me</h2>
+          <div className="w-20 h-1 bg-yellow-400 mx-auto"></div>
+        </div>
+        
+        <div className="grid md:grid-cols-3 gap-12 items-center">
+          <div className="md:col-span-2 space-y-6">
+            <p className="text-lg text-gray-800 leading-relaxed">
+              Hello! I'm Eva Manuska, a passionate Full Stack Developer with a keen eye for design and a love for creating 
+              beautiful, functional web applications. With a background in both development and design, I bring a unique 
+              perspective to every project I work on.
             </p>
-            <p className="text-gray-800 leading-relaxed mb-6">
-              With a strong foundation in computer science and years of hands-on experience, I specialize in developing 
-              applications that are both performant and user-friendly. I'm always eager to learn new technologies and 
-              methodologies to stay at the forefront of web development.
+            
+            <p className="text-lg text-gray-800 leading-relaxed">
+              I specialize in building modern web applications using the latest technologies, with a strong focus on 
+              creating seamless user experiences. My approach combines clean code, thoughtful design, and efficient 
+              solutions to solve real-world problems.
             </p>
-            <div className="flex flex-wrap gap-4 mt-8">
-              <span className="px-4 py-2 bg-purple-100 text-purple-800 rounded-full text-sm font-medium">
-                JavaScript/TypeScript
-              </span>
-              <span className="px-4 py-2 bg-purple-100 text-purple-800 rounded-full text-sm font-medium">
-                React/Next.js
-              </span>
-              <span className="px-4 py-2 bg-purple-100 text-purple-800 rounded-full text-sm font-medium">
-                Node.js
-              </span>
-              <span className="px-4 py-2 bg-purple-100 text-purple-800 rounded-full text-sm font-medium">
-                Tailwind CSS
-              </span>
+            
+            <div>
+              <h3 className="text-xl font-semibold text-black mb-4">My Skills</h3>
+              <div className="flex flex-wrap gap-3">
+                {skills.map((skill, index) => (
+                  <span 
+                    key={index}
+                    className="px-4 py-2 bg-white border border-gray-200 rounded-full text-sm font-medium 
+                             hover:bg-yellow-100 hover:border-yellow-300 transition-colors shadow-sm"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
-          <div className="flex items-center justify-center">
-            <div className="w-48 h-48 rounded-full bg-purple-100 flex items-center justify-center">
-              <span className="text-4xl text-purple-800">👩‍💻</span>
+          
+          <div className="relative">
+            <div className="relative z-10 rounded-2xl overflow-hidden shadow-xl">
+              <img 
+                src="/profile.jpg" 
+                alt="Eva Manuska" 
+                className="w-full h-auto object-cover"
+                onError={(e) => {
+                  e.target.onerror = null;
+                  e.target.src = 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80';
+                }}
+              />
             </div>
+            <div className="absolute -bottom-4 -right-4 w-full h-full border-2 border-yellow-400 rounded-2xl -z-0"></div>
           </div>
         </div>
       </div>

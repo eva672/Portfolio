@@ -40,7 +40,7 @@ export default function Projects() {
                   {project.technologies.map((tech, i) => (
                     <span 
                       key={i}
-                      className="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-xs font-medium"
+                      className="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs font-medium"
                     >
                       {tech}
                     </span>
@@ -53,7 +53,7 @@ export default function Projects() {
         <div className="text-center mt-12">
           <a 
             href="/projects"
-            className="inline-block bg-purple-400 text-black px-6 py-3 rounded-lg hover:bg-purple-500 transition-colors"
+            className="inline-block bg-yellow-400 text-black px-6 py-3 rounded-lg hover:bg-yellow-500 transition-colors"
           >
             View All Projects
           </a>
