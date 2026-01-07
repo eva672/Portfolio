@@ -2,8 +2,8 @@
 
 export default function About() {
   const skills = [
-    'JavaScript/TypeScript', 'React/Next.js', 'Node.js', 'Python',
-    'Tailwind CSS', 'UI/UX Design', 'Responsive Development', 'Git'
+    'JavaScript/TypeScript', 'React/Next.js', 'Node.js', 'Rust',
+    'Terraform', 'AWS', 'LPIC', 'Git', 'Tailwind CSS'
   ];
 
   return (
