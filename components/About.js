@@ -2,8 +2,8 @@
 
 export default function About() {
   const skills = [
-    'JavaScript/TypeScript', 'React/Next.js', 'Node.js', 'Rust',
-    'Terraform', 'AWS', 'LPIC', 'Git', 'Tailwind CSS'
+    'SOC Operations', 'Threat Hunting', 'Incident Response', 'Terraform',
+    'AWS Security', 'LPIC Certified', 'Cloud Security', 'Network Security', 'Security Monitoring'
   ];
 
   return (
@@ -17,19 +17,19 @@ export default function About() {
         <div className="grid md:grid-cols-3 gap-12 items-center">
           <div className="md:col-span-2 space-y-6">
             <p className="text-lg text-gray-800 leading-relaxed">
-              Hello! I'm Eva Manuska, a passionate Full Stack Developer with a keen eye for design and a love for creating 
-              beautiful, functional web applications. With a background in both development and design, I bring a unique 
-              perspective to every project I work on.
+              Hello! I'm Eva Manuska, a dedicated Security Engineer with a strong foundation in full-stack development. 
+              With certifications in Terraform, LPIC, and JavaScript, I bring a security-first mindset to every project, 
+              ensuring robust and secure systems from the ground up.
             </p>
             
             <p className="text-lg text-gray-800 leading-relaxed">
-              I specialize in building modern web applications using the latest technologies, with a strong focus on 
-              creating seamless user experiences. My approach combines clean code, thoughtful design, and efficient 
-              solutions to solve real-world problems.
+              I specialize in Security Operations Center (SOC) activities, including threat hunting, incident response, and security monitoring. 
+              With hands-on experience in cloud security and infrastructure as code using Terraform, I bring a comprehensive 
+              security perspective to protect and defend organizational assets.
             </p>
             
             <div>
-              <h3 className="text-xl font-semibold text-black mb-4">My Skills</h3>
+              <h3 className="text-xl font-semibold text-black mb-4">Security & Technical Expertise</h3>
               <div className="flex flex-wrap gap-3">
                 {skills.map((skill, index) => (
                   <span 

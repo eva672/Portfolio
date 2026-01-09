@@ -13,24 +13,39 @@ export default function Hero() {
           <div className="w-28 h-1 bg-yellow-400 mx-auto md:mx-0 mb-6"></div>
 
           <h2 className="text-2xl md:text-3xl text-gray-800 mb-6">
-            Full Stack Developer & Designer
+            Security Engineer & Full-Stack Developer
           </h2>
 
-          <p className="text-gray-700 max-w-lg mb-8 text-lg">
-            Creating beautiful, functional, and user-centered digital experiences.
-            Specializing in modern web technologies and clean, efficient code.
+          <p className="text-gray-700 max-w-lg mb-6 text-lg">
+            Securing cloud infrastructure and building robust applications with a focus on automation and best practices. 
+            Certified in Terraform, LPIC, and JavaScript, I bring security-first thinking to every project.
           </p>
 
-          <div className="flex gap-4 justify-center md:justify-start">
+          <div className="flex flex-wrap gap-2 mb-8">
+            <span className="bg-gray-100 text-gray-800 text-sm font-medium px-3 py-1 rounded-full">
+              Wazuh SIEM
+            </span>
+            <span className="bg-gray-100 text-gray-800 text-sm font-medium px-3 py-1 rounded-full">
+              Terraform
+            </span>
+            <span className="bg-gray-100 text-gray-800 text-sm font-medium px-3 py-1 rounded-full">
+              LPIC Certified
+            </span>
+            <span className="bg-gray-100 text-gray-800 text-sm font-medium px-3 py-1 rounded-full">
+              JavaScript
+            </span>
+          </div>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
             <a 
               href="#contact" 
-              className="bg-yellow-400 hover:bg-yellow-500 text-black font-medium py-3 px-8 rounded-lg transition-colors"
+              className="bg-yellow-400 hover:bg-yellow-500 text-black font-medium py-3 px-8 rounded-lg transition-colors text-center"
             >
               Get In Touch
             </a>
             <a 
               href="#projects" 
-              className="border-2 border-black hover:bg-gray-100 text-black font-medium py-3 px-8 rounded-lg transition-colors"
+              className="border-2 border-black hover:bg-gray-100 text-black font-medium py-3 px-8 rounded-lg transition-colors text-center"
             >
               View My Work
             </a>
@@ -43,7 +58,7 @@ export default function Hero() {
           <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl w-64 h-80 md:w-80 md:h-96">
             <img 
               src="/profile.jpg" 
-              alt="Eva Manuska" 
+              alt="Eva Manuska - Security Engineer" 
               className="w-full h-full object-cover"
               onError={(e) => {
                 e.target.onerror = null;

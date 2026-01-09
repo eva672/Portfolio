@@ -2,22 +2,22 @@
 
 const projects = [
   {
-    title: 'E-commerce Platform',
-    description: 'A full-stack e-commerce platform with user authentication, product catalog, and payment integration.',
-    technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-    image: '🛍️'
+    title: 'Security Operations Center (SOC)',
+    description: 'Led SOC operations including security monitoring, incident response, and threat hunting using Wazuh and other security tools to protect organizational assets.',
+    technologies: ['Wazuh', 'SOC Operations', 'Incident Response', 'Threat Hunting'],
+    image: '🛡️'
   },
   {
-    title: 'Task Management App',
-    description: 'A collaborative task management application with real-time updates and team features.',
-    technologies: ['Next.js', 'TypeScript', 'Firebase', 'Tailwind CSS'],
-    image: '✅'
+    title: 'Cloud Security Hardening',
+    description: 'Implemented security best practices and compliance standards for AWS infrastructure using Terraform and security automation tools.',
+    technologies: ['AWS', 'Terraform', 'Cloud Security', 'Compliance'],
+    image: '☁️'
   },
   {
-    title: 'Portfolio Website',
-    description: 'A responsive portfolio website built with modern web technologies.',
-    technologies: ['React', 'Next.js', 'Tailwind CSS', 'Framer Motion'],
-    image: '🎨'
+    title: 'Incident Response Automation',
+    description: 'Developed automated incident response workflows to reduce mean time to detection (MTTD) and response (MTTR) for security events.',
+    technologies: ['Python', 'Automation', 'Incident Response', 'SOC'],
+    image: '🚨'
   }
 ];
 
