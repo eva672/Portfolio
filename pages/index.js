@@ -5,6 +5,7 @@ import Hero from '../components/Hero';
 import About from '../components/About';
 import Projects from '../components/Projects';
 import Contact from '../components/Contact';
+import Certifications from '../components/Certifications';
 
 export default function Home() {
   return (
@@ -28,6 +29,10 @@ export default function Home() {
 
         <section id="projects" className="min-h-screen flex items-center">
           <Projects />
+        </section>
+
+        <section id="certifications" className="min-h-screen flex items-center bg-gray-50">
+          <Certifications />
         </section>
 
         <section id="contact" className="min-h-screen flex items-center bg-white">
