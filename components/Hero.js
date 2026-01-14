@@ -2,54 +2,54 @@ import { playfair } from '../utils/fonts';
 
 export default function Hero() {
   return (
-    <section className="w-full py-20 bg-white">
+    <section className="w-full py-20 bg-white dark:bg-gray-900">
       <div className="max-w-6xl mx-auto px-8 flex flex-col md:flex-row items-center gap-12">
         {/* Left side - Text content */}
         <div className="flex-1 order-2 md:order-1 text-center md:text-left">
-          <h1 className={`${playfair.variable} font-serif text-5xl md:text-6xl lg:text-7xl font-bold text-black mb-6`}>
+          <h1 className={`${playfair.variable} font-serif text-5xl md:text-6xl lg:text-7xl font-bold text-black dark:text-white mb-6`}>
             EVA MANUSKA
           </h1>
-          
+
           <div className="w-28 h-1 bg-yellow-400 mx-auto md:mx-0 mb-6"></div>
 
-          <h2 className="text-2xl md:text-3xl text-gray-800 mb-6">
+          <h2 className="text-2xl md:text-3xl text-gray-800 dark:text-gray-200 mb-6">
             Security Engineer & Full-Stack Developer
           </h2>
 
-          <p className="text-gray-700 max-w-lg mb-6 text-lg">
-            Securing cloud infrastructure and building robust applications with a focus on automation and best practices. 
+          <p className="text-gray-700 dark:text-gray-300 max-w-lg mb-6 text-lg">
+            Securing cloud infrastructure and building robust applications with a focus on automation and best practices.
             Certified in Terraform, LPIC, and JavaScript, I bring security-first thinking to every project.
           </p>
-          
+
           <div className="flex flex-wrap gap-2 mb-8">
-            <a 
-              href="https://wazuh.com" 
-              target="_blank" 
+            <a
+              href="https://wazuh.com"
+              target="_blank"
               rel="noopener noreferrer"
-              className="bg-gray-100 hover:bg-gray-200 text-gray-800 text-sm font-medium px-3 py-1 rounded-full transition-colors"
+              className="bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200 text-sm font-medium px-3 py-1 rounded-full transition-colors"
             >
               Wazuh SOC
             </a>
-            <a 
-              href="https://www.credly.com/badges/eb3b75db-3942-4d78-ac61-564b3e1d66ae" 
-              target="_blank" 
+            <a
+              href="https://www.credly.com/badges/eb3b75db-3942-4d78-ac61-564b3e1d66ae"
+              target="_blank"
               rel="noopener noreferrer"
               className="bg-gray-100 hover:bg-gray-200 text-gray-800 text-sm font-medium px-3 py-1 rounded-full transition-colors"
               title="HashiCorp Certified: Terraform Associate"
             >
               Terraform Certified
             </a>
-            <a 
-              href="https://www.lpi.org/our-certifications/certification-holder-resources" 
-              target="_blank" 
+            <a
+              href="https://www.lpi.org/our-certifications/certification-holder-resources"
+              target="_blank"
               rel="noopener noreferrer"
               className="bg-gray-100 hover:bg-gray-200 text-gray-800 text-sm font-medium px-3 py-1 rounded-full transition-colors"
             >
               LPIC Certified
             </a>
-            <a 
-              href="https://verify.openedg.org/?id=jGnK.dqX4.CRvs" 
-              target="_blank" 
+            <a
+              href="https://verify.openedg.org/?id=jGnK.dqX4.CRvs"
+              target="_blank"
               rel="noopener noreferrer"
               className="bg-gray-100 hover:bg-gray-200 text-gray-800 text-sm font-medium px-3 py-1 rounded-full transition-colors"
               title="OpenEDG JavaScript Certification"
@@ -59,23 +59,23 @@ export default function Hero() {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-            <a 
-              href="#contact" 
+            <a
+              href="#contact"
               className="bg-yellow-400 hover:bg-yellow-500 text-black font-medium py-3 px-8 rounded-lg transition-colors text-center"
             >
               Get In Touch
             </a>
-            <a 
-              href="#projects" 
-              className="border-2 border-black hover:bg-gray-100 text-black font-medium py-3 px-8 rounded-lg transition-colors text-center"
+            <a
+              href="#projects"
+              className="border-2 border-black dark:border-white hover:bg-gray-100 dark:hover:bg-gray-800 text-black dark:text-white font-medium py-3 px-8 rounded-lg transition-colors text-center"
             >
               View My Work
             </a>
-            <a 
-              href="https://github.com/evamanuska" 
+            <a
+              href="https://github.com/evamanuska"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 border-2 border-black hover:bg-gray-100 text-black font-medium py-3 px-6 rounded-lg transition-colors text-center"
+              className="flex items-center justify-center gap-2 border-2 border-black dark:border-white hover:bg-gray-100 dark:hover:bg-gray-800 text-black dark:text-white font-medium py-3 px-6 rounded-lg transition-colors text-center"
               aria-label="GitHub Profile"
             >
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -90,9 +90,9 @@ export default function Hero() {
         <div className="relative flex-shrink-0 order-1 md:order-2 mb-8 md:mb-0">
           <div className="absolute -left-4 -top-4 w-full h-full bg-yellow-300 rounded-2xl -z-10"></div>
           <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl w-64 h-80 md:w-80 md:h-96">
-            <img 
-              src="/profile.jpg" 
-              alt="Eva Manuska - Security Engineer" 
+            <img
+              src="/profile.jpg"
+              alt="Eva Manuska - Security Engineer"
               className="w-full h-full object-cover"
               onError={(e) => {
                 e.target.onerror = null;

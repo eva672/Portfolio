@@ -3,7 +3,7 @@ import Sidebar from './Sidebar';
 
 export default function Layout({ children }) {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white dark:bg-gray-900">
       <Sidebar />
       {/* Main content gets left margin to account for the fixed sidebar */}
       <div className="ml-64">

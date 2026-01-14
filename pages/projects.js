@@ -1,6 +1,8 @@
+'use client';
 import Head from 'next/head';
 import { FiGithub, FiExternalLink } from 'react-icons/fi';
 import Link from 'next/link';
+import ThemeToggle from '../components/ThemeToggle';
 
 const projects = [
   {
@@ -39,30 +41,40 @@ const projects = [
 
 export default function Projects() {
   return (
-    <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 py-12 px-4 sm:px-6 lg:px-8">
       <Head>
         <title>Projects — Eva Manuska</title>
         <meta name="description" content="Explore my portfolio of software development and infrastructure projects" />
       </Head>
 
+      {/* Header with theme toggle */}
+      <div className="max-w-7xl mx-auto mb-8">
+        <div className="flex justify-between items-center">
+          <Link href="/" className="inline-flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 font-medium">
+            ← Back to Home
+          </Link>
+          <ThemeToggle />
+        </div>
+      </div>
+
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">My Projects</h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">My Projects</h1>
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             A collection of my recent work, including open-source contributions and personal projects.
           </p>
         </div>
 
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-2">
           {projects.map((project, index) => (
-            <div 
+            <div
               key={index}
-              className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300"
+              className="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300"
             >
-              <div className="h-48 bg-gray-200 overflow-hidden">
+              <div className="h-48 bg-gray-200 dark:bg-gray-700 overflow-hidden">
                 {project.image ? (
-                  <img 
-                    src={project.image} 
+                  <img
+                    src={project.image}
                     alt={project.title}
                     className="w-full h-full object-cover"
                     onError={(e) => {
@@ -77,12 +89,12 @@ export default function Projects() {
                 )}
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">{project.title}</h3>
-                <p className="text-gray-600 mb-4">{project.description}</p>
-                
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">{project.title}</h3>
+                <p className="text-gray-600 dark:text-gray-300 mb-4">{project.description}</p>
+
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tech.map((tech, i) => (
-                    <span 
+                    <span
                       key={i}
                       className="px-3 py-1 bg-blue-50 text-blue-700 text-xs font-medium rounded-full"
                     >
@@ -96,7 +108,7 @@ export default function Projects() {
                     href={project.repo}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors"
+                    className="inline-flex items-center text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                   >
                     <FiGithub className="mr-1.5 h-4 w-4" />
                     Code
@@ -106,7 +118,7 @@ export default function Projects() {
                       href={project.demo}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors"
+                      className="inline-flex items-center text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                     >
                       <FiExternalLink className="mr-1.5 h-4 w-4" />
                       Live Demo
@@ -116,12 +128,6 @@ export default function Projects() {
               </div>
             </div>
           ))}
-        </div>
-
-        <div className="mt-12 text-center">
-          <Link href="/" className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium">
-            ← Back to Home
-          </Link>
         </div>
       </div>
     </div>

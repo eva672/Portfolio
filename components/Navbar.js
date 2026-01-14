@@ -1,6 +1,7 @@
 'use client';
 import Link from 'next/link';
 import { useSection } from '../context/SectionContext';
+import ThemeToggle from './ThemeToggle';
 
 const navigation = [
   { name: 'Home', href: '#home' },
@@ -29,28 +30,28 @@ export default function Navbar() {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-sm border-b border-gray-100">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm border-b border-gray-100 dark:border-gray-700">
       <nav className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
-            <span className="text-xl font-bold text-gray-900">Eva Manuska</span>
+            <span className="text-xl font-bold text-gray-900 dark:text-white">Eva Manuska</span>
           </div>
-          
+
           <div className="hidden md:ml-6 md:flex md:items-center md:space-x-8">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
                 onClick={(e) => handleNavClick(e, item.href)}
-                className={`inline-flex items-center px-1 pt-1 text-sm font-medium ${
-          activeSection === item.name.toLowerCase()
-            ? 'text-black border-b-2 border-black'
-            : 'text-gray-600 hover:text-black'
-                }`}
+                className={`inline-flex items-center px-1 pt-1 text-sm font-medium ${activeSection === item.name.toLowerCase()
+                  ? 'text-black dark:text-white border-b-2 border-black dark:border-white'
+                  : 'text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white'
+                  }`}
               >
                 {item.name}
               </Link>
             ))}
+            <ThemeToggle />
           </div>
         </div>
       </nav>
