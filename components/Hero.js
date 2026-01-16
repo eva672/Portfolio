@@ -1,6 +1,8 @@
 import { playfair } from '../utils/fonts';
+import { useTranslation } from 'next-i18next';
 
 export default function Hero() {
+  const { t } = useTranslation('common');
   return (
     <section className="w-full py-20 bg-white dark:bg-gray-900">
       <div className="max-w-6xl mx-auto px-8 flex flex-col md:flex-row items-center gap-12">
@@ -13,12 +15,11 @@ export default function Hero() {
           <div className="w-28 h-1 bg-yellow-400 mx-auto md:mx-0 mb-6"></div>
 
           <h2 className="text-2xl md:text-3xl text-gray-800 dark:text-gray-200 mb-6">
-            Security Engineer & Full-Stack Developer
+            {t('heroTitle')}
           </h2>
 
           <p className="text-gray-700 dark:text-gray-300 max-w-lg mb-6 text-lg">
-            Securing cloud infrastructure and building robust applications with a focus on automation and best practices.
-            Certified in Terraform, LPIC, and JavaScript, I bring security-first thinking to every project.
+            {t('heroSubtitle')}
           </p>
 
           <div className="flex flex-wrap gap-2 mb-8">
@@ -63,13 +64,13 @@ export default function Hero() {
               href="#contact"
               className="bg-yellow-400 hover:bg-yellow-500 text-black font-medium py-3 px-8 rounded-lg transition-colors text-center"
             >
-              Get In Touch
+              {t('heroCta1')}
             </a>
             <a
               href="#projects"
               className="border-2 border-black dark:border-white hover:bg-gray-100 dark:hover:bg-gray-800 text-black dark:text-white font-medium py-3 px-8 rounded-lg transition-colors text-center"
             >
-              View My Work
+              {t('heroCta2')}
             </a>
             <a
               href="https://github.com/evamanuska"

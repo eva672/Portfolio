@@ -1,17 +1,26 @@
 'use client';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
+import { useTranslation } from 'next-i18next';
 import { useSection } from '../context/SectionContext';
 import ThemeToggle from './ThemeToggle';
 
-const navigation = [
-  { name: 'Home', href: '#home' },
-  { name: 'About', href: '#about' },
-  { name: 'Projects', href: '#projects' },
-  { name: 'Contact', href: '#contact' }
-];
-
 export default function Navbar() {
   const { activeSection } = useSection();
+  const router = useRouter();
+  const { t } = useTranslation('common');
+
+  const navigation = [
+    { name: t('navHome'), href: '#home' },
+    { name: t('navAbout'), href: '#about' },
+    { name: t('navProjects'), href: '#projects' },
+    { name: t('navContact'), href: '#contact' }
+  ];
+
+  const handleLocaleChange = (event) => {
+    const newLocale = event.target.value;
+    router.push(router.pathname, router.asPath, { locale: newLocale });
+  };
 
   const handleNavClick = (e, href) => {
     // allow modifier keys to open in new tab
@@ -52,6 +61,16 @@ export default function Navbar() {
               </Link>
             ))}
             <ThemeToggle />
+            <div className="ml-4">
+              <select
+                onChange={handleLocaleChange}
+                value={router.locale}
+                className="bg-transparent text-gray-600 dark:text-gray-300 focus:outline-none"
+              >
+                <option value="en">EN</option>
+                <option value="fr">FR</option>
+              </select>
+            </div>
           </div>
         </div>
       </nav>

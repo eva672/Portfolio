@@ -1,7 +1,9 @@
 'use client';
 import { useState } from 'react';
+import { useTranslation } from 'next-i18next';
 
 export default function Contact() {
+  const { t } = useTranslation('common');
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -51,34 +53,34 @@ export default function Contact() {
     <div className="min-h-screen flex items-center justify-center bg-white dark:bg-gray-900 px-4 sm:px-6 lg:px-8 py-20">
       <div className="max-w-4xl w-full mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-black dark:text-white mb-4">Get In Touch</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-black dark:text-white mb-4">{t('contactTitle')}</h2>
           <div className="w-20 h-1 bg-yellow-400 mx-auto"></div>
           <p className="mt-6 text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            Have a project in mind or want to work together? Feel free to reach out to me.
+            {t('contactSubtitle')}
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-12">
           <div className="space-y-8">
             <div className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg h-full">
-              <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6">Send me a message</h3>
+              <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6">{t('contactFormTitle')}</h3>
 
               {submitStatus === 'success' && (
                 <div className="mb-6 p-4 bg-green-50 text-green-700 rounded-lg">
-                  Thank you for your message! I'll get back to you soon.
+                  {t('contactFormSuccess')}
                 </div>
               )}
 
               {submitStatus === 'error' && (
                 <div className="mb-6 p-4 bg-red-50 text-red-700 rounded-lg">
-                  Oops! Something went wrong. Please try again later.
+                  {t('contactFormError')}
                 </div>
               )}
 
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                    Your Name <span className="text-red-500">*</span>
+                    {t('contactFormName')} <span className="text-red-500">*</span>
                   </label>
                   <input
                     type="text"
@@ -94,7 +96,7 @@ export default function Contact() {
 
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-                    Email Address <span className="text-red-500">*</span>
+                    {t('contactFormEmail')} <span className="text-red-500">*</span>
                   </label>
                   <input
                     type="email"
@@ -110,7 +112,7 @@ export default function Contact() {
 
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
-                    Your Message <span className="text-red-500">*</span>
+                    {t('contactFormMessage')} <span className="text-red-500">*</span>
                   </label>
                   <textarea
                     id="message"
@@ -133,7 +135,7 @@ export default function Contact() {
                         : 'bg-yellow-400 hover:bg-yellow-500'
                       }`}
                   >
-                    {isSubmitting ? 'Sending...' : 'Send Message'}
+                    {isSubmitting ? t('contactFormSubmitting') : t('contactFormSubmit')}
                   </button>
                 </div>
               </form>
@@ -142,9 +144,9 @@ export default function Contact() {
 
           <div className="space-y-8">
             <div className="bg-gray-50 dark:bg-gray-800 p-8 rounded-2xl h-full">
-              <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6">Contact Information</h3>
+              <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6">{t('contactInfoTitle')}</h3>
               <p className="text-gray-600 dark:text-gray-300 mb-8">
-                Feel free to reach out to me through any of these channels. I typically respond within 24 hours.
+                {t('contactInfoSubtitle')}
               </p>
 
               <div className="space-y-6">
@@ -155,7 +157,7 @@ export default function Contact() {
                     </svg>
                   </div>
                   <div className="ml-4">
-                    <h4 className="text-sm font-medium text-gray-500">Email</h4>
+                    <h4 className="text-sm font-medium text-gray-500">{t('contactInfoEmail')}</h4>
                     <a href="mailto:evamanuska@gmail.com" className="text-lg font-medium text-gray-900 dark:text-white hover:text-yellow-600 transition-colors">
                       evamanuska@gmail.com
                     </a>
@@ -169,7 +171,7 @@ export default function Contact() {
                     </svg>
                   </div>
                   <div className="ml-4">
-                    <h4 className="text-sm font-medium text-gray-500">Phone</h4>
+                    <h4 className="text-sm font-medium text-gray-500">{t('contactInfoPhone')}</h4>
                     <a href="tel:+237696497156" className="text-lg font-medium text-gray-900 dark:text-white hover:text-yellow-600 transition-colors">
                       +237 696 497 156
                     </a>
@@ -184,14 +186,14 @@ export default function Contact() {
                     </svg>
                   </div>
                   <div className="ml-4">
-                    <h4 className="text-sm font-medium text-gray-500">Location</h4>
+                    <h4 className="text-sm font-medium text-gray-500">{t('contactInfoLocation')}</h4>
                     <p className="text-lg font-medium text-gray-900 dark:text-white">Cameroon</p>
                   </div>
                 </div>
               </div>
 
               <div className="mt-12">
-                <h4 className="text-sm font-medium text-gray-500 mb-4">Follow Me</h4>
+                <h4 className="text-sm font-medium text-gray-500 mb-4">{t('contactInfoFollow')}</h4>
                 <div className="flex space-x-4">
                   {[
                     { name: 'GitHub', icon: 'github', url: 'https://github.com' },

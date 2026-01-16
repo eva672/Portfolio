@@ -1,6 +1,9 @@
 'use client';
 
+import { useTranslation } from 'next-i18next';
+
 export default function About() {
+  const { t } = useTranslation('common');
   const skills = [
     'SOC Operations', 'Threat Hunting', 'Incident Response', 'Terraform',
     'AWS Security', 'LPIC Certified', 'Cloud Security', 'Network Security', 'Security Monitoring'
@@ -10,26 +13,22 @@ export default function About() {
     <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-800 px-8 py-20">
       <div className="max-w-5xl mx-auto w-full">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-black dark:text-white mb-4">About Me</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-black dark:text-white mb-4">{t('aboutTitle')}</h2>
           <div className="w-20 h-1 bg-yellow-400 mx-auto"></div>
         </div>
 
         <div className="grid md:grid-cols-3 gap-12 items-center">
           <div className="md:col-span-2 space-y-6">
             <p className="text-lg text-gray-800 dark:text-gray-200 leading-relaxed">
-              Hello! I'm Eva Manuska, a dedicated Security Engineer with a strong foundation in full-stack development.
-              With certifications in Terraform, LPIC, and JavaScript, I bring a security-first mindset to every project,
-              ensuring robust and secure systems from the ground up.
+              {t('aboutP1')}
             </p>
 
             <p className="text-lg text-gray-800 leading-relaxed">
-              I specialize in Security Operations Center (SOC) activities, including threat hunting, incident response, and security monitoring.
-              With hands-on experience in cloud security and infrastructure as code using Terraform, I bring a comprehensive
-              security perspective to protect and defend organizational assets.
+              {t('aboutP2')}
             </p>
 
             <div>
-              <h3 className="text-xl font-semibold text-black dark:text-white mb-4">Security & Technical Expertise</h3>
+              <h3 className="text-xl font-semibold text-black dark:text-white mb-4">{t('aboutExpertise')}</h3>
               <div className="flex flex-wrap gap-3">
                 {skills.map((skill, index) => (
                   <span
