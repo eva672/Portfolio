@@ -4,25 +4,25 @@ import { useTranslation } from 'next-i18next';
 export default function Hero() {
   const { t } = useTranslation('common');
   return (
-    <section className="w-full py-20 bg-white dark:bg-gray-900">
-      <div className="max-w-6xl mx-auto px-8 flex flex-col md:flex-row items-center gap-12">
+    <section className="w-full py-16 md:py-20 bg-white dark:bg-gray-900">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center gap-8 md:gap-12">
         {/* Left side - Text content */}
         <div className="flex-1 order-2 md:order-1 text-center md:text-left">
-          <h1 className={`${playfair.variable} font-serif text-5xl md:text-6xl lg:text-7xl font-bold text-black dark:text-white mb-6`}>
+          <h1 className={`${playfair.variable} font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-black dark:text-white mb-4 md:mb-6`}>
             EVA MANUSKA
           </h1>
 
           <div className="w-28 h-1 bg-yellow-400 mx-auto md:mx-0 mb-6"></div>
 
-          <h2 className="text-2xl md:text-3xl text-gray-800 dark:text-gray-200 mb-6">
+          <h2 className="text-xl sm:text-2xl md:text-3xl text-gray-800 dark:text-gray-200 mb-4 md:mb-6">
             {t('heroTitle')}
           </h2>
 
-          <p className="text-gray-700 dark:text-gray-300 max-w-lg mb-6 text-lg">
+          <p className="text-gray-700 dark:text-gray-300 max-w-lg mb-6 text-base sm:text-lg">
             {t('heroSubtitle')}
           </p>
 
-          <div className="flex flex-wrap gap-2 mb-8">
+          <div className="flex flex-wrap gap-2 justify-center md:justify-start mb-8">
             <a
               href="https://wazuh.com"
               target="_blank"
@@ -88,9 +88,9 @@ export default function Hero() {
         </div>
 
         {/* Right side - Profile image */}
-        <div className="relative flex-shrink-0 order-1 md:order-2 mb-8 md:mb-0">
+        <div className="relative flex-shrink-0 order-1 md:order-2">
           <div className="absolute -left-4 -top-4 w-full h-full bg-yellow-300 rounded-2xl -z-10"></div>
-          <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl w-64 h-80 md:w-80 md:h-96">
+          <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl w-56 h-72 sm:w-64 sm:h-80 md:w-80 md:h-96">
             <img
               src="/profile.jpg"
               alt="Eva Manuska - Security Engineer"

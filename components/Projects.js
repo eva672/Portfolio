@@ -43,10 +43,10 @@ const projects = [
 export default function Projects() {
   const { t } = useTranslation('common');
   return (
-    <div className="min-h-screen flex items-center justify-center bg-white dark:bg-gray-900 px-8 py-20">
+    <div className="min-h-screen flex items-center justify-center bg-white dark:bg-gray-900 px-4 sm:px-6 lg:px-8 py-16 md:py-20">
       <div className="max-w-6xl mx-auto w-full">
-        <h2 className="text-4xl font-bold text-black dark:text-white mb-12 text-center">{t('myProjects')}</h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <h2 className="text-3xl sm:text-4xl font-bold text-black dark:text-white mb-12 text-center">{t('myProjects')}</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <a href={project.link} key={index} target="_blank" rel="noopener noreferrer">
               <div

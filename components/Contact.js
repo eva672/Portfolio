@@ -50,20 +50,20 @@ export default function Contact() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-white dark:bg-gray-900 px-4 sm:px-6 lg:px-8 py-20">
+    <div className="min-h-screen flex items-center justify-center bg-white dark:bg-gray-900 px-4 sm:px-6 lg:px-8 py-16 md:py-20">
       <div className="max-w-4xl w-full mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-black dark:text-white mb-4">{t('contactTitle')}</h2>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black dark:text-white mb-4">{t('contactTitle')}</h2>
           <div className="w-20 h-1 bg-yellow-400 mx-auto"></div>
-          <p className="mt-6 text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          <p className="mt-6 text-base sm:text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             {t('contactSubtitle')}
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
           <div className="space-y-8">
-            <div className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg h-full">
-              <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6">{t('contactFormTitle')}</h3>
+            <div className="bg-white dark:bg-gray-800 p-6 sm:p-8 rounded-2xl shadow-lg h-full">
+              <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 dark:text-white mb-6">{t('contactFormTitle')}</h3>
 
               {submitStatus === 'success' && (
                 <div className="mb-6 p-4 bg-green-50 text-green-700 rounded-lg">
@@ -143,8 +143,8 @@ export default function Contact() {
           </div>
 
           <div className="space-y-8">
-            <div className="bg-gray-50 dark:bg-gray-800 p-8 rounded-2xl h-full">
-              <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6">{t('contactInfoTitle')}</h3>
+            <div className="bg-gray-50 dark:bg-gray-800 p-6 sm:p-8 rounded-2xl h-full">
+              <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 dark:text-white mb-6">{t('contactInfoTitle')}</h3>
               <p className="text-gray-600 dark:text-gray-300 mb-8">
                 {t('contactInfoSubtitle')}
               </p>

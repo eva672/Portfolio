@@ -10,25 +10,25 @@ export default function About() {
   ];
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-800 px-8 py-20">
+    <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-800 px-4 sm:px-6 lg:px-8 py-16 md:py-20">
       <div className="max-w-5xl mx-auto w-full">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-black dark:text-white mb-4">{t('aboutTitle')}</h2>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black dark:text-white mb-4">{t('aboutTitle')}</h2>
           <div className="w-20 h-1 bg-yellow-400 mx-auto"></div>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-12 items-center">
+        <div className="grid md:grid-cols-3 gap-8 md:gap-12 items-center">
           <div className="md:col-span-2 space-y-6">
-            <p className="text-lg text-gray-800 dark:text-gray-200 leading-relaxed">
+            <p className="text-base sm:text-lg text-gray-800 dark:text-gray-200 leading-relaxed">
               {t('aboutP1')}
             </p>
 
-            <p className="text-lg text-gray-800 leading-relaxed">
+            <p className="text-base sm:text-lg text-gray-800 leading-relaxed">
               {t('aboutP2')}
             </p>
 
             <div>
-              <h3 className="text-xl font-semibold text-black dark:text-white mb-4">{t('aboutExpertise')}</h3>
+              <h3 className="text-lg sm:text-xl font-semibold text-black dark:text-white mb-4">{t('aboutExpertise')}</h3>
               <div className="flex flex-wrap gap-3">
                 {skills.map((skill, index) => (
                   <span
@@ -43,7 +43,7 @@ export default function About() {
             </div>
           </div>
 
-          <div className="relative">
+          <div className="relative mt-8 md:mt-0">
             <div className="relative z-10 rounded-2xl overflow-hidden shadow-xl">
               <img
                 src="/profile.jpg"
