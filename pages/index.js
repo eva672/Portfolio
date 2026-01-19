@@ -1,15 +1,14 @@
+'use client';
 import Head from 'next/head';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import About from '../components/About';
 import Projects from '../components/Projects';
 import Contact from '../components/Contact';
-import Certifications from '../components/Certifications';
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900 overflow-x-hidden">
+    <div className="min-h-screen bg-white overflow-x-hidden">
       <Head>
         <title>Eva Manuska - Portfolio</title>
         <meta name="description" content="Eva Manuska's Portfolio" />
@@ -23,7 +22,7 @@ export default function Home() {
           <Hero />
         </section>
 
-        <section id="about" className="min-h-screen flex items-center bg-white dark:bg-gray-900">
+        <section id="about" className="min-h-screen flex items-center bg-white">
           <About />
         </section>
 
@@ -31,22 +30,10 @@ export default function Home() {
           <Projects />
         </section>
 
-        <section id="certifications" className="min-h-screen flex items-center bg-gray-50 dark:bg-gray-800">
-          <Certifications />
-        </section>
-
-        <section id="contact" className="min-h-screen flex items-center bg-white dark:bg-gray-900">
+        <section id="contact" className="min-h-screen flex items-center bg-white">
           <Contact />
         </section>
       </main>
     </div>
   );
-}
-
-export async function getStaticProps({ locale }) {
-  return {
-    props: {
-      ...(await serverSideTranslations(locale, ['common'])),
-    },
-  };
 }

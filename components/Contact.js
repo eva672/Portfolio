@@ -1,9 +1,7 @@
 'use client';
 import { useState } from 'react';
-import { useTranslation } from 'next-i18next';
 
 export default function Contact() {
-  const { t } = useTranslation('common');
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -23,7 +21,7 @@ export default function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-
+    
     try {
       // Replace with your form submission logic
       // const response = await fetch('/api/contact', {
@@ -31,13 +29,13 @@ export default function Contact() {
       //   headers: { 'Content-Type': 'application/json' },
       //   body: JSON.stringify(formData)
       // });
-
+      
       // Simulate API call
       await new Promise(resolve => setTimeout(resolve, 1500));
-
+      
       setSubmitStatus('success');
       setFormData({ name: '', email: '', message: '' });
-
+      
       // Reset success message after 5 seconds
       setTimeout(() => setSubmitStatus(null), 5000);
     } catch (error) {
@@ -50,37 +48,37 @@ export default function Contact() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-white dark:bg-gray-900 px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+    <div className="min-h-screen flex items-center justify-center bg-white px-4 sm:px-6 lg:px-8 py-20">
       <div className="max-w-4xl w-full mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black dark:text-white mb-4">{t('contactTitle')}</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">Get In Touch</h2>
           <div className="w-20 h-1 bg-yellow-400 mx-auto"></div>
-          <p className="mt-6 text-base sm:text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            {t('contactSubtitle')}
+          <p className="mt-6 text-lg text-gray-600 max-w-2xl mx-auto">
+            Have a project in mind or want to work together? Feel free to reach out to me.
           </p>
         </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+        
+        <div className="grid md:grid-cols-2 gap-12">
           <div className="space-y-8">
-            <div className="bg-white dark:bg-gray-800 p-6 sm:p-8 rounded-2xl shadow-lg h-full">
-              <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 dark:text-white mb-6">{t('contactFormTitle')}</h3>
-
+            <div className="bg-white p-8 rounded-2xl shadow-lg h-full">
+              <h3 className="text-2xl font-semibold text-gray-900 mb-6">Send me a message</h3>
+              
               {submitStatus === 'success' && (
                 <div className="mb-6 p-4 bg-green-50 text-green-700 rounded-lg">
-                  {t('contactFormSuccess')}
+                  Thank you for your message! I'll get back to you soon.
                 </div>
               )}
-
+              
               {submitStatus === 'error' && (
                 <div className="mb-6 p-4 bg-red-50 text-red-700 rounded-lg">
-                  {t('contactFormError')}
+                  Oops! Something went wrong. Please try again later.
                 </div>
               )}
-
+              
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                    {t('contactFormName')} <span className="text-red-500">*</span>
+                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+                    Your Name <span className="text-red-500">*</span>
                   </label>
                   <input
                     type="text"
@@ -88,15 +86,15 @@ export default function Contact() {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 transition"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 transition"
                     placeholder="John Doe"
                     required
                   />
                 </div>
-
+                
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-                    {t('contactFormEmail')} <span className="text-red-500">*</span>
+                    Email Address <span className="text-red-500">*</span>
                   </label>
                   <input
                     type="email"
@@ -109,10 +107,10 @@ export default function Contact() {
                     required
                   />
                 </div>
-
+                
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
-                    {t('contactFormMessage')} <span className="text-red-500">*</span>
+                    Your Message <span className="text-red-500">*</span>
                   </label>
                   <textarea
                     id="message"
@@ -120,35 +118,36 @@ export default function Contact() {
                     rows={5}
                     value={formData.message}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 transition"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 transition"
                     placeholder="Hello Eva, I'd like to discuss a project..."
                     required
                   ></textarea>
                 </div>
-
+                
                 <div className="pt-2">
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className={`w-full py-4 px-8 rounded-lg font-medium text-lg transition-colors ${isSubmitting
-                        ? 'bg-yellow-300 cursor-not-allowed'
+                    className={`w-full py-4 px-8 rounded-lg font-medium text-lg transition-colors ${
+                      isSubmitting 
+                        ? 'bg-yellow-300 cursor-not-allowed' 
                         : 'bg-yellow-400 hover:bg-yellow-500'
-                      }`}
+                    }`}
                   >
-                    {isSubmitting ? t('contactFormSubmitting') : t('contactFormSubmit')}
+                    {isSubmitting ? 'Sending...' : 'Send Message'}
                   </button>
                 </div>
               </form>
             </div>
           </div>
-
+          
           <div className="space-y-8">
-            <div className="bg-gray-50 dark:bg-gray-800 p-6 sm:p-8 rounded-2xl h-full">
-              <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 dark:text-white mb-6">{t('contactInfoTitle')}</h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-8">
-                {t('contactInfoSubtitle')}
+            <div className="bg-gray-50 p-8 rounded-2xl h-full">
+              <h3 className="text-2xl font-semibold text-gray-900 mb-6">Contact Information</h3>
+              <p className="text-gray-600 mb-8">
+                Feel free to reach out to me through any of these channels. I typically respond within 24 hours.
               </p>
-
+              
               <div className="space-y-6">
                 <div className="flex items-start">
                   <div className="flex-shrink-0 bg-yellow-100 p-3 rounded-full">
@@ -157,13 +156,13 @@ export default function Contact() {
                     </svg>
                   </div>
                   <div className="ml-4">
-                    <h4 className="text-sm font-medium text-gray-500">{t('contactInfoEmail')}</h4>
-                    <a href="mailto:evamanuska@gmail.com" className="text-lg font-medium text-gray-900 dark:text-white hover:text-yellow-600 transition-colors">
+                    <h4 className="text-sm font-medium text-gray-500">Email</h4>
+                    <a href="mailto:evamanuska@gmail.com" className="text-lg font-medium text-gray-900 hover:text-yellow-600 transition-colors">
                       evamanuska@gmail.com
                     </a>
                   </div>
                 </div>
-
+                
                 <div className="flex items-start">
                   <div className="flex-shrink-0 bg-yellow-100 p-3 rounded-full">
                     <svg className="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -171,13 +170,13 @@ export default function Contact() {
                     </svg>
                   </div>
                   <div className="ml-4">
-                    <h4 className="text-sm font-medium text-gray-500">{t('contactInfoPhone')}</h4>
-                    <a href="tel:+237696497156" className="text-lg font-medium text-gray-900 dark:text-white hover:text-yellow-600 transition-colors">
+                    <h4 className="text-sm font-medium text-gray-500">Phone</h4>
+                    <a href="tel:+237696497156" className="text-lg font-medium text-gray-900 hover:text-yellow-600 transition-colors">
                       +237 696 497 156
                     </a>
                   </div>
                 </div>
-
+                
                 <div className="flex items-start">
                   <div className="flex-shrink-0 bg-yellow-100 p-3 rounded-full">
                     <svg className="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -186,14 +185,14 @@ export default function Contact() {
                     </svg>
                   </div>
                   <div className="ml-4">
-                    <h4 className="text-sm font-medium text-gray-500">{t('contactInfoLocation')}</h4>
-                    <p className="text-lg font-medium text-gray-900 dark:text-white">Cameroon</p>
+                    <h4 className="text-sm font-medium text-gray-500">Location</h4>
+                    <p className="text-lg font-medium text-gray-900">Cameroon</p>
                   </div>
                 </div>
               </div>
-
+              
               <div className="mt-12">
-                <h4 className="text-sm font-medium text-gray-500 mb-4">{t('contactInfoFollow')}</h4>
+                <h4 className="text-sm font-medium text-gray-500 mb-4">Follow Me</h4>
                 <div className="flex space-x-4">
                   {[
                     { name: 'GitHub', icon: 'github', url: 'https://github.com' },

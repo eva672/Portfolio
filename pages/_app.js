@@ -1,4 +1,3 @@
-import { appWithTranslation } from 'next-i18next';
 import { SectionProvider } from '../context/SectionContext';
 import Layout from '../components/Layout';
 import OverlayDetector from '../components/OverlayDetector';
@@ -16,4 +15,4 @@ function MyApp({ Component, pageProps }) {
   );
 }
 
-export default appWithTranslation(MyApp);
+export default MyApp;
